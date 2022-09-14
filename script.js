@@ -103,6 +103,7 @@ const closeModal = () => {
   resultModal.classList.toggle("hidden");
 };
 
+// start btn function starts the timer and starts listening to keydown event
 const start = () => {
   // If already started, do not start again
   if (startTime) return;
@@ -114,10 +115,11 @@ const start = () => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
-    if (count == 0) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      // countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
