@@ -26,6 +26,8 @@ const typeController = (e) => {
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    // display how many characters are wrong input by user
+    errorCount++;
     return display.removeChild(display.lastChild);
   }
 
@@ -118,12 +120,14 @@ const start = () => {
     if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      // countdownOverlay.style.display = "flex";
+      // countdownOverlay.style.display = "flex"; // delete this line
+      // start timer hidden
       countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
+      console.log(startTime);
     }
     count--;
   }, 1000);
