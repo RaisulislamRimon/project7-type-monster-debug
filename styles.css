@@ -181,7 +181,7 @@ button {
   top: 0;
 }
 
-/* @media only screen and (max-width: 700px) { */
+/* laptop device view  */
 @media only screen and (min-width: 700px) {
   .box-container {
     padding: 0 20px;
@@ -190,5 +190,17 @@ button {
   .card {
     flex-direction: column;
     width: 33%;
+  }
+}
+
+/* mobile device view */
+@media only screen and (max-width: 700px) {
+  .box-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .card {
+    flex-direction: column;
+    /* width: 33%; */
   }
 }
